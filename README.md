@@ -33,3 +33,4 @@ For the model trained on the CheXpert dataset, we applied two different datasets
 
 For the model trained on the NIH dataset, we also used two dataset for internal and external testing. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
 
+![Grad-CAM on images](GradCAM_image_7_patient64547.png)
