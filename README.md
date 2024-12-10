@@ -8,11 +8,13 @@ disease prediction, it remains unclear which specific features they rely on due 
 of AI. For example, when predicting a diagnosis from medical images, it is difficult to determine
 which areas of the image the model primarily focuses on for classification. This lack of transparency
 can undermine trust in machine learning among healthcare professionals.
+
 To evaluate the model’s practical applicability in real-world scenarios, we conducted cross-dataset
 generalization experiments. Specifically, we tested whether the model could maintain similar per-
 formance when evaluated on external datasets. This step was crucial for assessing the model’s
 ability to generalize to unseen data, which helps determine its reliability and robustness in real-world
 applications where data from new sources or populations may be encountered.
+
 To better understand the model’s decision-making process, we applied explainable AI techniques to
 analyze the model in detail. These techniques allowed us to identify which features in the images
 influenced the model’s decisions by highlighting the most important regions. This analysis also helps
