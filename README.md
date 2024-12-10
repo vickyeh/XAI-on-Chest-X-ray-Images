@@ -33,4 +33,20 @@ For the model trained on the CheXpert dataset, we applied two different datasets
 
 For the model trained on the NIH dataset, we also used two dataset for internal and external testing. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
 
+We utilized Grad-CAM to assess the performance of the CheXpert model at different training
+checkpoints, specifically focusing on the Enlarged Cardiomediastinum category, as shown in the figure below. Over the training, we observed that the model’s attention gradually became more focused on the
+relevant regions associated with this condition. In the earlier epochs, the highlighted areas were less
+localized, but as training progressed, the Grad-CAM visualizations showed a clear improvement,
+with the model increasingly focusing on the heart region, which is central to diagnosing Enlarged
+Cardiomediastinum.
+By Epoch 30, the model successfully identified the heart area as the key feature for prediction, which
+aligned with the true label for the condition. Concurrently, we saw a decrease in the predicted
+probability, making it closer to the actual label of 0, further suggesting that the model’s confidence
+was aligning with the true diagnosis.
+However, despite this positive trend, some irrelevant regions, such as the shoulder area, were still
+occasionally highlighted in the Grad-CAM maps, even at later epochs. This indicates that, although
+the model had started to focus more on the heart—an important feature for detecting Enlarged
+Cardiomediastinum, it was still influenced by extraneous parts of the image. This suggests that the
+model might still learn some irrelevant features, and further refinement or adjustments may be needed
+to fully mitigate this behavior.
 ![Grad-CAM on images](images/GradCAM.png)
