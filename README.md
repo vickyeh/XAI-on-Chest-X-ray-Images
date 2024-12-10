@@ -31,9 +31,12 @@ Grad-CAM and DeepSHAP were applied as explainable AI techniques to highlight key
 
 For the model trained on the CheXpert dataset, we applied two different datasets for testing. Although the AUC values for the six common classes vary, the mean AUC across these classes remains similar. Interestingly, the external dataset testing even yields a slightly better AUC. It represents that this model shows a good generalization because it can be apply on different dataset without decreased AUC.
 
-![Two Dataset applied on CheXpert Model](images/CheXpert ModelGeneralization.png)
+![Two Dataset applied on CheXpert Model](images/CheXpert_Model_Generalization.png)
+
 For the model trained on the NIH dataset, we also used two dataset for internal and external testing. For external testing, the AUC decreases across all classes, and the mean AUC drops significantly from 0.80 to 0.68. Although the NIH model shows relatively better internal testing performance, its poor external performance suggests potential overfitting or the model relying on incorrect shortcuts during learning. Given that NIH has a larger dataset, these results also indicate that a larger dataset does not always guarantee better performance.
-![Two Dataset applied on NIH Model](images/NIH Model Generalization.png)
+
+![Two Dataset applied on NIH Model](images/NIH_Model_Generalization.png)
+
 We utilized Grad-CAM to assess the performance of the CheXpert model at different training
 checkpoints, specifically focusing on the Enlarged Cardiomediastinum category, as shown in the figure below. Over the training, we observed that the model’s attention gradually became more focused on the
 relevant regions associated with this condition. In the earlier epochs, the highlighted areas were less
